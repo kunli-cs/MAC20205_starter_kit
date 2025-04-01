@@ -7,6 +7,7 @@ In [prediction.csv](./prediction.csv), each row represents one micro-action prop
 
 ## Column Description
 | Column | Description |
+| - | -| 
 | video_id | The unique ID of the video (e.g., `val0000`). |
 |t_start | The predicted **start time** of the action in seconds (floating-point number). |
 |t_end | The predicted **end time** of the action in seconds (floating-point number). |
