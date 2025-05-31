@@ -4,7 +4,7 @@ The baseline code for Track 1: Micro-Action Recognition (MAR) of [The 2nd Micro-
 
 ## Data Preparation
 
-Fetch the video data from [Challenge page](https://sites.google.com/view/micro-action/challenge/data), and place it to `./data`.
+Fetch the video data from [Challenge page](https://sites.google.com/view/micro-action/datasets), and place it to `./data`.
 
 ---
 
