@@ -36,12 +36,13 @@ You can use the following command to train a model.
 # Swin Video Transformer base version
 python tools/train.py configs/recognition/swin/swin-small-p244-w877_in1k-pre_8xb8-amp-32x2x1-40e_ma52-rgb.py --seed=0 --deterministic
 ```
+
 ---
 ## Test
 
 ```shell
 
-python tools/test.py configs/recognition/swin/swin-small-p244-w877_in1k-pre_8xb8-amp-32x2x1-40e_ma52-rgb.py work_dirs/swin/small/best_acc_top1_epoch_33.pth --dump submit/test_result.pickle
+python tools/test.py configs/recognition/swin/swin-small-p244-w877_in1k-pre_8xb8-amp-32x2x1-40e_ma52-rgb.py work_dirs/swin/swin-small-p244-w877_in1k-pre_8xb8-amp-32x2x1-40e_ma52-rgb/best_acc_top1_epoch_33.pth --dump submit/test_result.pickle
 ## build the submission file
 python ./submit/generate.py
 ## Note that this code is for Development Phase.
@@ -53,8 +54,8 @@ python ./submit/generate.py
 
 | Model | Top-1 (Body) | Top-5 (Action) | F1_mean | ckpt |
 | :-: | :-: | :-: | :-: | :-: |
-| VSwin-small | 79.18 | 61.37 | 65.92 | [Link](https://drive.google.com/file/d/1a_4vyLWPIcpHmNUO7kKO72I1sjIMyEIm/view?usp=sharing) |
-
+| VSwin-base | 78.59 | 61.15 | 65.18 | [Link 🤗](https://huggingface.co/kunli-cs/VSwin_MA52_Weights/tree/main/swin-base-p244-w877_in1k-pre_8xb8-amp-32x2x1-40e_ma52-rgb) |
+| VSwin-small | 79.18 | 61.37 | 65.92 | [Link 🤗](https://huggingface.co/kunli-cs/VSwin_MA52_Weights/tree/main/swin-small-p244-w877_in1k-pre_8xb8-amp-32x2x1-40e_ma52-rgb) |
 
 
 ## Acknowledgments
