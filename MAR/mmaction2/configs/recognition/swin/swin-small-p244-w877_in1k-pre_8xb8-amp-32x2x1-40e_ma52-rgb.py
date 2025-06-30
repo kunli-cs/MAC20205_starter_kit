@@ -88,8 +88,8 @@ test_dataloader = dict(
     sampler=dict(type='DefaultSampler', shuffle=False),
     dataset=dict(
         type=dataset_type,
-        ann_file=ann_file_val, # TODO: change to "ann_file_test" in Final Phase (July 1st to July 5th)
-        data_prefix=dict(video=data_root_val), # TODO: change to "data_root_test" in Final Phase (July 1st to July 5th)
+        ann_file=ann_file_test, # TODO: change to "ann_file_test" in Final Phase (July 1st to July 5th)
+        data_prefix=dict(video=data_root_test), # TODO: change to "data_root_test" in Final Phase (July 1st to July 5th)
         pipeline=test_pipeline,
         test_mode=True))
 

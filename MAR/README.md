@@ -46,17 +46,40 @@ python tools/test.py configs/recognition/swin/swin-small-p244-w877_in1k-pre_8xb8
 ## build the submission file
 python ./submit/generate.py
 ## Note that this code is for Development Phase.
-## You should change config file during Final Phase.
+
+
+##########################
+# Testing Phase
+##########################
+### Swin-base
+python tools/test.py configs/recognition/swin/swin-base-p244-w877_in1k-pre_8xb8-amp-32x2x1-40e_ma52-rgb.py work_dirs/swin/swin-base-p244-w877_in1k-pre_8xb8-amp-32x2x1-40e_ma52-rgb/best_acc_top1_epoch_39.pth --dump submit/test_result.pickle
+## build the submission file
+python ./submit/generate.py
+
+
+### Swin-small
+python tools/test.py configs/recognition/swin/swin-small-p244-w877_in1k-pre_8xb8-amp-32x2x1-40e_ma52-rgb.py work_dirs/swin/swin-small-p244-w877_in1k-pre_8xb8-amp-32x2x1-40e_ma52-rgb/best_acc_top1_epoch_33.pth --dump submit/test_result.pickle
+## build the submission file
+python ./submit/generate.py
+
 ```
 
 ---
 ## Results on validation set
 
-| Model | Top-1 (Body) | Top-5 (Action) | F1_mean | ckpt |
+| Model | Top-1 (Body) | Top-1 (Action) | F1_mean | ckpt |
 | :-: | :-: | :-: | :-: | :-: |
 | VSwin-base | 78.59 | 61.15 | 65.18 | [Link 🤗](https://huggingface.co/kunli-cs/VSwin_MA52_Weights/tree/main/swin-base-p244-w877_in1k-pre_8xb8-amp-32x2x1-40e_ma52-rgb) |
 | VSwin-small | 79.18 | 61.37 | 65.92 | [Link 🤗](https://huggingface.co/kunli-cs/VSwin_MA52_Weights/tree/main/swin-small-p244-w877_in1k-pre_8xb8-amp-32x2x1-40e_ma52-rgb) |
 
+## Results on test set (1138 samples)
+
+| Model | Top-1 (Body) | Top-1 (Action) | F1_mean | ckpt |
+| :-: | :-: | :-: | :-: | :-: |
+| VSwin-base | 77.15 | 60.19 | 64.57 | [Link 🤗](https://huggingface.co/kunli-cs/VSwin_MA52_Weights/tree/main/swin-base-p244-w877_in1k-pre_8xb8-amp-32x2x1-40e_ma52-rgb) |
+| VSwin-small | 79.44 | 58.96 | 65.68 | [Link 🤗](https://huggingface.co/kunli-cs/VSwin_MA52_Weights/tree/main/swin-small-p244-w877_in1k-pre_8xb8-amp-32x2x1-40e_ma52-rgb) |
+
+**Note that the test set (1138 samples) of Track 1 is a subset sampled from the original test (5526 samples) set of the MA-52 dataset.**
 
 ## Acknowledgments
 This code began with [MMAction2](https://github.com/open-mmlab/mmaction2). We thank the developers for doing most of the heavy-lifting.
@@ -74,6 +97,9 @@ Please consider citing the related paper in your publications if it helps your r
   number={7},
   pages={6238-6252},
 }
+
+
+
 ```
 ---
 

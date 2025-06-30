@@ -34,9 +34,14 @@ def fine2coarse(x):
 with open(pickle_file_path, 'rb') as file:
     datas = pickle.load(file)
 
-# TODO: change to test_list_videos.txt during Final Phase
-with open('./data/ma52/val_list_videos.txt', 'r') as f:
+# Development Phase
+# with open('./data/ma52/val_list_videos.txt', 'r') as f:
+#     file_names = [line.strip().split()[0] for line in f.readlines()]
+
+# Test Phase
+with open('./data/ma52/test_list_videos.txt', 'r') as f:
     file_names = [line.strip().split()[0] for line in f.readlines()]
+
 
 with open(pred_file_path, 'w', newline='') as f:
     writer = csv.writer(f)
